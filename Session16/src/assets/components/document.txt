@@ -1,0 +1,3 @@
+các thông tin phân trang:
++ Tổng số bản ghi
++ 

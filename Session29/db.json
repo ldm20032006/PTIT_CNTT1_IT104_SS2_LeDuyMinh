@@ -1,0 +1,51 @@
+{
+    "users":[
+        {
+            "id":1,
+            "name":"Duy Minh"
+        },
+        {
+            "id":2,
+            "name":"Thái Minh"
+        }
+    ],
+    "todos":[
+        {
+            "id":1,
+            "name":"Đá bóng",
+            "isComplete":0
+        },
+        {
+            "id":2,
+            "name":"Đánh cầu lông",
+            "isComplete":0
+        }
+    ],
+    "products":[
+        {
+            "id":1,
+            "name": "Ức gà",
+            "price": 45000
+        },
+        {
+            "id":2,
+            "name": "Trứng vịt lộn",
+            "price": 5000
+        },
+        {
+            "id":3,
+            "name": "Trứng ngỗng",
+            "price": 3000
+        },
+        {
+            "id":4,
+            "name": "Cá chép",
+            "price": 150000
+        },
+        {
+            "id":5,
+            "name": "Gạo ST25",
+            "price": 320000
+        }
+    ]    
+}

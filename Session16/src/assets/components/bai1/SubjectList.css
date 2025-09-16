@@ -1,0 +1,64 @@
+/* Nền tối toàn trang */
+body {
+    background-color: #1e1e1e;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container */
+  .container {
+    text-align: center;
+    padding: 40px;
+  }
+  
+  /* Header chứa icon + title */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  
+  /* Icon sách */
+  .icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  /* Tiêu đề */
+  .title {
+    font-size: 42px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  
+  /* Danh sách */
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Card môn học */
+  .card {
+    background-color: #dff6ff;
+    color: #004080;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 15px 50px;
+    border-radius: 12px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+  }
+  
+  /* Hiệu ứng hover */
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 200, 255, 0.4);
+  }
+  
