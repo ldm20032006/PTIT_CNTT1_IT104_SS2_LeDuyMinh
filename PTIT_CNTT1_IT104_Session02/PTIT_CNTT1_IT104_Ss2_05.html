@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,4 +32,39 @@
         displayContact();
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let phoneBooks = [];
+        const addContact = (name, phone, email) => {
+            const contact = {
+                name, 
+                phone,
+                email,
+            };
+            phoneBooks.push(contact);
+            
+        }
+        const displayContact = () => {
+            if (phoneBooks.length === 0){
+                console.log("Chua co lien he trong danh ba");
+            } else {
+                phoneBooks.forEach((contact) => {
+                    console.log(`Name: ${contact.name}, Phone: ${contact.phone}, Email: ${contact.email}`);
+                });
+            }
+        }
+        addContact("Vuong Thao Nhi", "12345", "vuongthaonhi@gmail.com");
+        addContact("Le Duy Minh", "678910", "leduyminh@gmail.com");
+        displayContact();
+    </script>
+</body>
+>>>>>>> 42a835f3d304a98d67d1b00f5cf4fb3f11adf146
 </html>

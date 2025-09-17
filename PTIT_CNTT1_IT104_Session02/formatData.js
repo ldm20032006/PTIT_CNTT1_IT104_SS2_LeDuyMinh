@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export const formatDate = (currentDate) => {
     let day = currentDate.getDate();
     if (day > 0 && day < 10) {
@@ -10,4 +11,18 @@ export const formatDate = (currentDate) => {
     let year = currentDate.getFullYear();
   
     return `${day}/${month}/${year}`;
+=======
+export const formatDate = (currentDate) => {
+    let day = currentDate.getDate();
+    if (day > 0 && day < 10) {
+      day = `0${day}`;
+    }
+    let month = currentDate.getMonth() + 1;
+    if (month > 0 && month < 10) {
+      month = `0${month}`;
+    }
+    let year = currentDate.getFullYear();
+  
+    return `${day}/${month}/${year}`;
+>>>>>>> 42a835f3d304a98d67d1b00f5cf4fb3f11adf146
   };
