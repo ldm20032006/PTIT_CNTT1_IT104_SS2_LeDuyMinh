@@ -16,4 +16,8 @@ createRoot(document.getElementById('root')!).render(
     </Provider>
    
   </StrictMode>,
+<<<<<<< HEAD
 ) 
+=======
+)
+>>>>>>> 9ff6c1a591451acca643a6e60899e7d056a54a8c

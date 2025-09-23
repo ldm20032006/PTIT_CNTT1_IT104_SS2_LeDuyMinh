@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useSelector } from "react-redux";
 
 export default function ListUser() {
@@ -35,4 +36,43 @@ export default function ListUser() {
       </table>
     </div>
   );
+=======
+import { useSelector } from "react-redux";
+
+export default function ListUser() {
+  const users = useSelector((state) => state.users);
+
+  return (
+    <div>
+      <h2>Danh sách người dùng</h2>
+      <table border={1} cellPadding={10} style={{ borderCollapse: "collapse" }}>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Tên</th>
+            <th>Giới tính</th>
+            <th>Ngày sinh</th>
+            <th>Địa chỉ</th>
+            <th>Chức năng</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.userName}</td>
+              <td>{user.gender}</td>
+              <td>{user.dateOfBirth}</td>
+              <td>{user.address}</td>
+              <td>
+                <button style={{color:"blue", marginRight:"10px"}}>Sửa</button>
+                <button style={{color:"red"}}>Xóa</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+>>>>>>> 9ff6c1a591451acca643a6e60899e7d056a54a8c
 }

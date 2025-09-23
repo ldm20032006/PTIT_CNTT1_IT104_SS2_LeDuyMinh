@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux";
 import { COMPANY } from "../redux/constants/type";
 
@@ -18,4 +19,26 @@ export default function ChangeState() {
       <button onClick={handleChange}>Change state</button>
     </div>
   );
+=======
+import { useDispatch, useSelector } from "react-redux";
+import { COMPANY } from "../redux/constants/type";
+
+export default function ChangeState() {
+  const company = useSelector((state) => state.company.company);
+  const dispatch = useDispatch();
+
+  const handleChange = () => {
+    dispatch({
+      type: COMPANY,
+      payload: "RikkeiSoft",
+    });
+  };
+
+  return (
+    <div>
+      <h2>Company: {company}</h2>
+      <button onClick={handleChange}>Change state</button>
+    </div>
+  );
+>>>>>>> 9ff6c1a591451acca643a6e60899e7d056a54a8c
 }

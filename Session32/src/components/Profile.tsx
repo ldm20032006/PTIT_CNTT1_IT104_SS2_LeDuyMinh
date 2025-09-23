@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useSelector } from "react-redux";
 
 export default function Profile() {
@@ -13,4 +14,21 @@ export default function Profile() {
       <p><strong>Địa chỉ:</strong> {user.address}</p>
     </div>
   );
+=======
+import { useSelector } from "react-redux";
+
+export default function Profile() {
+  const user = useSelector((state) => state.profile);
+
+  return (
+    <div>
+      <h2>Thông tin người dùng</h2>
+      <p><strong>ID:</strong> {user.id}</p>
+      <p><strong>Họ và tên:</strong> {user.fullName}</p>
+      <p><strong>Giới tính:</strong> {user.gender}</p>
+      <p><strong>Ngày sinh:</strong> {user.dateOfBirth}</p>
+      <p><strong>Địa chỉ:</strong> {user.address}</p>
+    </div>
+  );
+>>>>>>> 9ff6c1a591451acca643a6e60899e7d056a54a8c
 }
