@@ -1,11 +1,7 @@
-import StudentManager from './components/StudentManager'
-export default function App() {
-  
-  
-  return (
-    <div>
-      App
-      <StudentManager></StudentManager>
-    </div>
-  )
-}
+import TaskList from './components/TaskList';
+
+const App = () => {
+  return <TaskList />;
+};
+
+export default App;
