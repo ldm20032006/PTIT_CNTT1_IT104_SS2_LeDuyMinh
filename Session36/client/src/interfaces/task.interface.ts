@@ -11,3 +11,8 @@ export interface Task {
     error: string | null;
     selectedTask: Task | null;
   }
+  export interface User {
+    id: number;
+    name: string;
+  }
+  

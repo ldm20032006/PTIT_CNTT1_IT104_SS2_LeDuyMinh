@@ -6,6 +6,7 @@ import {
   toggleTaskCompletion,
 } from "../apis/task.api";
 import type { Task } from "../interfaces/task.interface";
+import type { RootState } from "../redux/stores"; // 👈 import RootState
 import TaskForm from "./TaskForm";
 import FilterControls from "./FilterControls";
 import {
@@ -17,7 +18,7 @@ import {
 } from "@mui/material";
 import { setSelectedTask } from "../redux/slices/task.slice";
 
-//Gom TaskItem vào trong đây
+// Gom TaskItem vào trong đây
 interface TaskItemProps {
   id: string;
   title: string;
@@ -40,7 +41,9 @@ const TaskItem: React.FC<TaskItemProps> = ({
     <div className="flex items-center justify-between p-3 bg-white rounded-lg shadow mb-2">
       <div>
         <h3
-          className={`font-semibold ${completed ? "line-through text-gray-500" : ""}`}
+          className={`font-semibold ${
+            completed ? "line-through text-gray-500" : ""
+          }`}
         >
           {title}
         </h3>
@@ -63,7 +66,11 @@ const TaskItem: React.FC<TaskItemProps> = ({
 
 const TaskList: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { tasks, status, error } = useAppSelector((state: { task: any; }) => state.task);
+
+  // 👇 dùng RootState thay cho any
+  const { tasks, status, error } = useAppSelector(
+    (state: RootState) => state.task
+  );
 
   const [deleteId, setDeleteId] = useState<number | null>(null);
   const [filters, setFilters] = useState({
@@ -91,16 +98,20 @@ const TaskList: React.FC = () => {
     dispatch(setSelectedTask(task));
   };
 
-  const filteredTasks = tasks.filter((task: { completed: any; priority: string; taskName: string; }) => {
+  // 👇 dùng Task thay cho {completed: any; priority: string; ...}
+  const filteredTasks = tasks.filter((task: Task) => {
     const matchStatus =
       filters.status === "all" ||
       (filters.status === "completed" && task.completed) ||
       (filters.status === "active" && !task.completed);
+
     const matchPriority =
       filters.priority === "all" || task.priority === filters.priority;
+
     const matchSearch = task.taskName
       .toLowerCase()
       .includes(filters.search.toLowerCase());
+
     return matchStatus && matchPriority && matchSearch;
   });
 
