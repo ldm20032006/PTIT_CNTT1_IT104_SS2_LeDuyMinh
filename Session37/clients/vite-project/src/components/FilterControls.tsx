@@ -29,7 +29,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
         variant="outlined"
         size="small"
         value={search}
-        onChange={(e) => onSearchChange(e.target.value)}
+        onChange={(e: { target: { value: string; }; }) => onSearchChange(e.target.value)}
         className="flex-1"
       />
       <FormControl size="small" className="w-32">
@@ -37,7 +37,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
         <Select
           value={grade}
           label="Grade"
-          onChange={(e) => onGradeChange(e.target.value)}
+          onChange={(e: { target: { value: string; }; }) => onGradeChange(e.target.value)}
         >
           {grades.map((g) => (
             <MenuItem key={g} value={g}>{g}</MenuItem>
@@ -49,7 +49,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
         <Select
           value={sort}
           label="Sắp xếp"
-          onChange={(e) => onSortChange(e.target.value)}
+          onChange={(e: { target: { value: string; }; }) => onSortChange(e.target.value)}
         >
           <MenuItem value="Name A -> Z">Name A - Z</MenuItem>
           <MenuItem value="Name Z -> A">Name Z - A</MenuItem>

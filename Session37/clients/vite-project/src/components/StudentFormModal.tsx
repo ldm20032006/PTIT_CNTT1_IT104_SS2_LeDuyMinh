@@ -1,6 +1,3 @@
-
-
-
 import {
     Button,
     Dialog,
@@ -22,7 +19,7 @@ import {
   
   const StudentFormModal: React.FC<StudentFormModalProps> = ({ open, onClose }) => {
     const dispatch = useAppDispatch();
-    const { selectedStudent } = useAppSelector((state) => state.student);
+    const { selectedStudent } = useAppSelector((state: { student: unknown; }) => state.student);
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
     const [grade, setGrade] = useState('');
@@ -87,7 +84,7 @@ import {
             variant="outlined"
             fullWidth
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setName(e.target.value)}
             margin="normal"
             error={error.includes('Tên')}
             helperText={error.includes('Tên') ? error : ''}
@@ -97,7 +94,7 @@ import {
             variant="outlined"
             fullWidth
             value={age}
-            onChange={(e) => setAge(e.target.value)}
+            onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setAge(e.target.value)}
             margin="normal"
             type="number"
             error={error.includes('Tuổi')}
@@ -108,7 +105,7 @@ import {
             variant="outlined"
             fullWidth
             value={grade}
-            onChange={(e) => setGrade(e.target.value)}
+            onChange={(e: { target: { value: React.SetStateAction<string>; }; }) => setGrade(e.target.value)}
             margin="normal"
             error={error.includes('lớp')}
             helperText={error.includes('lớp') ? error : ''}
